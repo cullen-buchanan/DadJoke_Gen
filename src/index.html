@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>Dad Joke Generator</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <style>
+      .jumbotron {
+        background: #337ab7;
+        color: white;
+      }
+
+      .jumbotron p {
+        max-width: 75%;
+        margin: 1em auto 2em;
+      }
+
+      #DadJoke-container {
+        margin-top: 32px;
+      }
+
+      #DadJoke-container p {
+        font-size: 24px;
+        margin: 32px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Dad Joke Generator</h1>
+        <p>Get ready for some good laughs!</p>
+      </div>
+    </div>
+    <main>
+      <div class="container text-center">
+        <div class="row">
+          <button class="btn btn-lg btn-primary">Click me for a Dad Joke</button>
+        </div>
+        <div class="row">
+          <div id="DadJoke-container"></div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function() {
+        const DadJokes = [
+		"What do you call a factory that makes okay products? A satisfactory.",
+		"Dear Math, grow up and solve your own problems.",
+		"What did the janitor say when he jumped out of the closet? Supplies!",
+		"Have you heard about the chocolate record player? It sounds pretty sweet.",
+		"What did the ocean say to the beach? Nothing, it just waved.",
+		"Why do seagulls fly over the ocean? Because if they flew over the bay, we'd call them bagels.",
+		"I only know 25 letters of the alphabet. I don't know y.",
+		"How does the moon cut his hair? Eclipse it.",
+		"What did one wall say to the other? I'll meet you at the corner.",
+		"What did the zero say to the eight? That belt looks good on you.",
+		"A skeleton walks into a bar and says, 'Hey, bartender. I'll have one beer and a mop.'",
+		"Where do fruits go on vacation? Pear-is!",
+		"I asked my dog what's two minus two. He said nothing.",
+		"What did Baby Corn say to Mama Corn? Where's Pop Corn?",
+		"What's the best thing about Switzerland? I don't know, but the flag is a big plus.",
+		"What does a sprinter eat before a race? Nothing, they fast!",
+		"Where do you learn to make a banana split? Sundae school.",
+		"What has more letters than the alphabet? The post office!",
+		"Dad, did you get a haircut? No, I got them all cut!",
+		"What do you call a poor Santa Claus? St. Nickel-less.",
+		"I got carded at a liquor store, and my Blockbuster card accidentally fell out. The cashier said never mind.",
+		"Where do boats go when they're sick? To the boat doc.",
+		"I don't trust those trees. They seem kind of shady.",
+		"My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right!",
+		"How do you get a squirrel to like you? Act like a nut.",
+		"Why don't eggs tell jokes? They'd crack each other up."
+        ];
+        let counter = 0;
+
+        const appendNewDadJoke = () => {
+          const p = document.createElement('p');
+          p.innerHTML = DadJokes[counter++] || "I'm all out of DadJokes!";
+          document.querySelector('#DadJoke-container').prepend(p);
+        }
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', appendNewDadJoke);
+      })();
+    </script>
+  </body>
+</html>
